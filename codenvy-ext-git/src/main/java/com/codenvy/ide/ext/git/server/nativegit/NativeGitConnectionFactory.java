@@ -17,10 +17,15 @@
  */
 package com.codenvy.ide.ext.git.server.nativegit;
 
+import com.codenvy.commons.env.EnvironmentContext;
+import com.codenvy.dto.server.DtoFactory;
 import com.codenvy.ide.ext.git.server.GitConnection;
 import com.codenvy.ide.ext.git.server.GitConnectionFactory;
 import com.codenvy.ide.ext.git.server.GitException;
 import com.codenvy.ide.ext.git.shared.GitUser;
+import com.codenvy.organization.client.UserManager;
+import com.codenvy.organization.exception.OrganizationServiceException;
+import com.codenvy.organization.model.User;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -35,11 +40,13 @@ import java.io.File;
 public class NativeGitConnectionFactory extends GitConnectionFactory {
     private final SshKeysManager    keysManager;
     private final CredentialsLoader credentialsLoader;
+    private UserManager userManager;
 
     @Inject
-    public NativeGitConnectionFactory(SshKeysManager keysManager, CredentialsLoader credentialsLoader) {
+    public NativeGitConnectionFactory(SshKeysManager keysManager, CredentialsLoader credentialsLoader, UserManager userManager) {
         this.keysManager = keysManager;
         this.credentialsLoader = credentialsLoader;
+        this.userManager = userManager;
     }
 
     public GitConnection getConnection(File workDir, GitUser user) throws GitException {

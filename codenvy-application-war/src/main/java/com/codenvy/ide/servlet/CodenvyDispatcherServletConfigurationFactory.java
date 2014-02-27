@@ -25,6 +25,7 @@ import com.codenvy.commons.servlet.DispatcherServletConfigurationFactory;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.ws.rs.core.UriBuilder;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -134,10 +135,15 @@ public class CodenvyDispatcherServletConfigurationFactory extends DispatcherServ
                                                      } else {
                                                          writer.write("      var path = null;\n");
                                                      }
-                                                     
+
                                                      writer.write("      var facebook_like_url = \"/ide/_app/facebook-like.html\";\n");
                                                      writer.write("      var google_like_url = \"/ide/_app/google-like.html\";\n");
-                                                     
+                                                     if (request.getQueryString() != null && !request.getQueryString().trim().isEmpty()) {
+                                                         writer.write(String.format("var initParams = \"%s\";\n", request.getQueryString()));
+                                                     } else {
+                                                         writer.write("var initParams = null;\n");
+                                                     }
+
                                                      writer.write("    </script>\n");
                                                      writer.write("    <link rel=\"shortcut icon\" href=\"_app/favicon.ico\"/>\n");
                                                      writer.write("  </head>\n");

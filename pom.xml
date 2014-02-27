@@ -55,6 +55,7 @@
         <module>codenvy-ext-github</module>
         <module>codenvy-ext-extensions</module>
         <module>codenvy-ide-security</module>
+        <module>codenvy-ide-factory</module>
         <module>codenvy-ide-client</module>
         <module>codenvy-ext-tutorials</module>
         <module>codenvy-sdk-tutorials/action-api</module>
@@ -95,6 +96,7 @@
         <commons-io.version>2.4</commons-io.version>
         <commons.compress.version>1.6</commons.compress.version>
         <enforcer.plugin.version>1.0.1</enforcer.plugin.version>
+        <everrest.assured>0.15</everrest.assured>
         <everrest.version>1.1.9</everrest.version>
         <exo.product.name>codenvy-ide</exo.product.name>
         <failsafe.plugin.version>2.6</failsafe.plugin.version>
@@ -105,6 +107,7 @@
         <gwt.maven.plugin.version>2.5.1</gwt.maven.plugin.version>
         <gwt.test.skip>true</gwt.test.skip>
         <gwt.version>2.5.1</gwt.version>
+        <hamcrest.version>1.2.1</hamcrest.version>
         <javax.annotation.version>1.0</javax.annotation.version>
         <javax.validation.version>1.0.0.GA</javax.validation.version>
         <javax.ws.rs.version>1.0</javax.ws.rs.version>
@@ -112,6 +115,7 @@
         <jgit.version>2.3.1.201302201838-r</jgit.version>
         <jsch.version>0.1.44-1</jsch.version>
         <junit.version>4.7</junit.version>
+        <logback.version>1.0.13</logback.version>
         <maven-model.version>3.0.5</maven-model.version>
         <maven.build.timestamp.format>dd.MM.yy HH:mm</maven.build.timestamp.format>
         <maven.compiler.source>1.7</maven.compiler.source>
@@ -119,6 +123,7 @@
         <maven.releases.repo.url>https://maven.codenvycorp.com/content/repositories/codenvy-private-releases/</maven.releases.repo.url>
         <maven.snapshots.repo.url>https://maven.codenvycorp.com/content/repositories/codenvy-private-snapshots/</maven.snapshots.repo.url>
         <mockito.version>1.9.5</mockito.version>
+        <mockitong.version>0.3</mockitong.version>
         <org.apache.lucene.version>2.9.4</org.apache.lucene.version>
         <org.easytesting.fest-assert.version>1.4</org.easytesting.fest-assert.version>
         <org.exoplatform.ide.version>2.8.1</org.exoplatform.ide.version>

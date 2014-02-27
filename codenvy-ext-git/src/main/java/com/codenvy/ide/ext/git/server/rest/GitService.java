@@ -699,28 +699,6 @@ public class GitService {
     }
 
     protected GitConnection getGitConnection() throws GitException, VirtualFileSystemException {
-        GitUser gituser = null;
-        try {
-            final String name = EnvironmentContext.getCurrent().getUser().getName();
-            User user = userManager.getUserByAlias(name);
-            String firstName = user.getProfile().getAttribute("firstName");
-            String lastName = user.getProfile().getAttribute("lastName");
-            String username = "";
-            if (firstName != null && firstName.length() != 0) {
-                username += firstName.concat(" ");
-            }
-            if (lastName != null && lastName.length() != 0) {
-                username += lastName;
-            }
-            if (username.length() != 0) {
-                gituser = DtoFactory.getInstance().createDto(GitUser.class).withName(username).withEmail(name);
-            } else {
-                gituser = DtoFactory.getInstance().createDto(GitUser.class).withName(name);
-            }
-        } catch (OrganizationServiceException e) {
-            LOG.error("It is not possible to get user", e);
-            throw new GitException("User not found");
-        }
-        return gitConnectionFactory.getConnection(resolveLocalPath(projectId), gituser);
+        return gitConnectionFactory.getConnection(resolveLocalPath(projectId));
     }
 }
